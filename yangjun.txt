@@ -1,0 +1,1 @@
+ https://github.com/yangjme/trade-service.git
