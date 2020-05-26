@@ -1,8 +1,8 @@
 package com.example.tradeservice.requestparam;
 
-import lombok.Value;
+import lombok.Data;
 
-@Value
+@Data
 public class CreateTransactionParam {
 	private Integer TransactionId;
 	private Integer TradeId;

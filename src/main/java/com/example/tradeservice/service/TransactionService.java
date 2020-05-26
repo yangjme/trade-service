@@ -36,8 +36,7 @@ public class TransactionService {
 		}
 		
 		newTrans.setTradeActionType(TradeActionType.UPDATE);
-		newTrans.setVersion(1);
-		    
+
 		transactionRepository.save(newTrans);
 	}
 	
@@ -64,8 +63,7 @@ public class TransactionService {
 	    }
 	    
 	    transaction.setTradeActionType(TradeActionType.UPDATE);
-	    transaction.setVersion(transaction.getVersion() + 1);
-	    
+
 	    transactionRepository.save(transaction);
 	}
 	
@@ -77,7 +75,7 @@ public class TransactionService {
 		Transaction transaction =  transactionRepository.findByTransactionIdAndTradeId(transactionId, tradeId);
 		
 		if (transaction == null) {
-			throw new RuntimeException("The Transacition is not found");
+			throw new RuntimeException("The Transaction is not found");
 		}
 		
 		if (StringUtils.isNotEmpty(securityCode)) {
@@ -92,9 +90,7 @@ public class TransactionService {
 	    }
 	    
 	    transaction.setTradeActionType(TradeActionType.CANCEL);
-	    transaction.setVersion(transaction.getVersion() + 1);
-	    
-	    
+
 	    transactionRepository.save(transaction);
 	}
 	

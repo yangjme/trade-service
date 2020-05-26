@@ -44,7 +44,7 @@ public class TransactionController {
 	}
 	
 	@GetMapping("/{transactionId}")
-	public List<Position> getPostionsOfTransaction(@PathVariable Integer transactionId) {
+	public List<Position> getPositionsOfTransaction(@PathVariable Integer transactionId) {
 		List<Transaction> trans = transactionService.findByTransactionId(transactionId);
 		
 		if (trans != null && !trans.isEmpty()) {
