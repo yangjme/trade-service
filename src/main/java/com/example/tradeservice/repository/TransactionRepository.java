@@ -2,12 +2,13 @@ package com.example.tradeservice.repository;
 
 import java.util.List;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import com.example.tradeservice.entity.Transaction;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.QueryByExampleExecutor;
 
-@Repository
-public interface TransactionRepository<Transaction> extends CrudRepository<Transaction, Integer> {
-	com.example.tradeservice.entity.Transaction findByTransactionIdAndTradeId(Integer transactionId, Integer tradeId);
+
+public interface TransactionRepository extends JpaRepository<Transaction, Integer> {
+	Transaction findByTransactionIdAndTradeId(Integer transactionId, Integer tradeId);
 	 
-	List<com.example.tradeservice.entity.Transaction> findByTransactionId(Integer transactionId);
+	List<Transaction> findByTransactionId(Integer transactionId);
 }
